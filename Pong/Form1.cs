@@ -14,8 +14,11 @@ namespace Pong
     {
         //Location Variables
         int cpuDirection = 5;
-        int ballXCoordinate = 5;
-        int ballYCoordinate = 5;
+        int ballXCoordinate = 10;
+        int ballYCoordinate = 10;
+
+        //Move Variable
+        int toMovePlayer = 15;
 
         //Score Variables
         int playerScore = 0;
@@ -25,7 +28,6 @@ namespace Pong
         int bottomBoundary;
         int centerPoint;
         int xMidpoint;
-        int yMidpoint;
 
         //Detection Variables
         bool playerDetectetUp;
@@ -36,19 +38,17 @@ namespace Pong
         //Special Keys
         int escapeClicked = 0;
 
-        //Timer 
-        int timer = 0;
-        long setSpeed = 5000;
-        int seconds;
-        int minutes;
-
 
         public Pong()
         {
             InitializeComponent();
             bottomBoundary = ClientSize.Height - player1.Height;
             xMidpoint = ClientSize.Width / 2;
-            yMidpoint = ClientSize.Height / 2;
+
+            Random newBallSpot = new Random();
+            int newSpot = newBallSpot.Next(1, 756);
+
+            pongball.Location = new Point(xMidpoint, newSpot );
         }
 
 
@@ -57,14 +57,20 @@ namespace Pong
         private void Pong_Load(object sender, EventArgs e)
         {
             Score.Text = playerScore.ToString();
-            pongTimerMinute.Text = minutes.ToString();
         }
 
         private void pongTimer_Tick(object sender, EventArgs e)
         {
-            Random newBallSpot = new Random();
-            int newSpot = newBallSpot.Next(100, ClientSize.Height - 100);
+            //Random Speed add
+            Random rd = new Random();
+            int newSpeed = rd.Next(1, 50);
 
+            uint tryzahl = 0;
+            if (newSpeed == 5)
+            {
+                if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl)==true)
+                ballXCoordinate += 1;
+            }
 
             //Update playerScore
             Score.Text = playerScore.ToString();
@@ -74,24 +80,6 @@ namespace Pong
                 toCalculate = 0;
             }
             toCalculate += 100;
-
-            //Timer
-            timer += 20;
-            if (timer == 1000)
-            {
-                timer = 0;
-                seconds++;
-                pongTimerMinute.Text = minutes.ToString() + " : " + seconds.ToString();
-            }
-            else if (seconds == 60)
-            {
-                seconds = 0;
-                minutes++;
-                playerScore += 1159;
-                pongTimerMinute.Text = minutes.ToString() + ": ";
-            }
-
-            
 
             //Adjust where the ball is
             pongball.Top -= ballYCoordinate;
@@ -104,10 +92,8 @@ namespace Pong
                 pongball.BackColor = Color.Red; 
                 Task.Delay(500).Wait();
                 pongball.BackColor = Color.Black;
-                MessageBox.Show("Ball has left the screen (left)");
-                //Gib hier endscreen ein
-                this.Close();
-
+                losescreen l = new losescreen(playerScore);
+                l.Show();
             }
 
             //Check if ball has exited the right side of the screen
@@ -118,9 +104,8 @@ namespace Pong
                 pongball.BackColor = Color.Red;
                 Task.Delay(500).Wait();
                 pongball.BackColor = Color.Black;
-                MessageBox.Show("Ball has left the screen (right)");
-                //Gib hier endscreen ein
-                this.Close();
+                losescreen l = new losescreen(playerScore);
+                l.Show();
             }
 
             //Ensure the ball is within the boundaries of the screen
@@ -130,85 +115,155 @@ namespace Pong
             }
 
             //Check if the ball hits the player1 or player2 paddle
-            if(pongball.Bounds.IntersectsWith(player1.Bounds) || pongball.Bounds.IntersectsWith(player2.Bounds))
+            if(pongball.Bounds.IntersectsWith(player1.Bounds))
             {
-                //Send ball opposite direction
-                ballXCoordinate = -ballXCoordinate;
+                int Point1 = player1.Location.Y + 25;
+                int Point2 = player1.Location.Y + 188;
+                //check where ball hits the Player
+                if (pongball.Location.Y > player1.Location.Y && pongball.Location.Y < Point1)
+                {
+                    //Send ball opposite direction an give another angle
+                    ballXCoordinate = -ballXCoordinate;
+                    if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
+                    {
+                        ballYCoordinate = -3;
+                    }
+                    else
+                    {
+                        ballYCoordinate = +3;
+                    }
+                    playerScore += 9;
+                }
+                else if (pongball.Location.Y > Point2 && pongball.Location.Y < player1.Height)
+                {
+                    //Send ball opposite direction an give another angle
+                    ballXCoordinate = -ballXCoordinate;
+                    if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
+                    {
+                        ballYCoordinate = -3;
+                    }
+                    else
+                    {
+                        ballYCoordinate = +3;
+                    }
+                    playerScore += 9;
+                }
+                else
+                {
+                    //Send ball opposite direction
+                    ballXCoordinate = -ballXCoordinate;
 
-                //Give Points
-                playerScore += 7;
+                    //Give Points
+                    playerScore += 7;
+                }
+            }else if (pongball.Bounds.IntersectsWith(player2.Bounds))
+            {
+                int Point1 = player2.Location.Y + 25;
+                int Point2 = player2.Location.Y + 188;
+                //check where ball hits the Player
+                if (pongball.Location.Y > player2.Location.Y && pongball.Location.Y < Point1)
+                {
+                    //Send ball opposite direction an give another angle
+                    ballXCoordinate = -ballXCoordinate;
+                    if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
+                    {
+                        ballYCoordinate = -3;
+                    }
+                    else
+                    {
+                        ballYCoordinate = +3;
+                    }
+                    playerScore += 9;
+                }
+                else if (pongball.Location.Y > Point2 && pongball.Location.Y < player2.Height)
+                {
+                    //Send ball opposite direction an give another angle
+                    ballXCoordinate = -ballXCoordinate;
+                    if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
+                    {
+                        ballYCoordinate = -3;
+                    }
+                    else
+                    {
+                        ballYCoordinate = +3;
+                    }
+                    playerScore += 9;
+                }
+                else
+                {
+                    //Send ball opposite direction
+                    ballXCoordinate = -ballXCoordinate;
 
+                    //Give Points
+                    playerScore += 7;
+                }
+            }
+
+
+            //Chech if ball hits Top or Bottom of Player
+            int bottomCordY1 = player1.Location.Y + 213;
+            int bottomCordY2 = player2.Location.Y + 213;
+
+            int rightLine1 = player1.Location.X + player1.Width;
+            int rightLine2 = player1.Location.X;
+            if (pongball.Location.Y == bottomCordY1 && pongball.Location.X < rightLine1 || pongball.Location.Y == bottomCordY2 && pongball.Location.X < rightLine2)
+            {
+                ballYCoordinate = -ballYCoordinate;
             }
 
             //Move player1 up
             if (playerDetectetUp == true && player1.Top > 25)
             {
-                player1.Top -= 10;
+                player1.Top -= toMovePlayer;
             }
 
             //Move player1 down
             if (playerDetectetDown == true && player1.Top < bottomBoundary - 25)
             {
-                player1.Top += 10;
+                player1.Top += toMovePlayer;
             }
 
             //Move player2 up
             if (player2DetectetUp == true && player2.Top > 25)
             {
-                player2.Top -= 10;
+                player2.Top -= toMovePlayer;
             }
 
             //Move player2 down
             if (player2DetectetDown == true && player2.Top < bottomBoundary - 25)
             {
-                player2.Top += 10;
-                if (player2.Top > bottomBoundary)
-                {
-                    player2.Top = bottomBoundary - 15;
-                    player2DetectetDown = false;
-                }
+                player2.Top += toMovePlayer;
             }
-
-            if (timer == setSpeed)
-            {
-                if(ballXCoordinate < 10)
-                {
-                    setSpeed += 5000;
-                    ballXCoordinate += 1;
-                }
-
-            }
-
         }
 
         private void Pong_KeyUp(object sender, KeyEventArgs e)
         {
             //If player1 presses the up arrow, move paddle upwards
-            if (e.KeyCode == Keys.Up) { playerDetectetUp = false; }
+            if (e.KeyCode == Keys.W) { playerDetectetUp = false; }
 
             //If player1 presses the down arrow, move paddle upwards
-            if (e.KeyCode == Keys.Down) { playerDetectetDown = false; }
+            if (e.KeyCode == Keys.S) { playerDetectetDown = false; }
 
             //If player2 presses the up arrow, move paddle upwards
-            if (e.KeyCode == Keys.W) { player2DetectetUp = false; }
+            if (e.KeyCode == Keys.Up) { player2DetectetUp = false; }
 
             //If player2 presses the down arrow, move paddle upwards
-            if (e.KeyCode == Keys.S) { player2DetectetDown = false; }
+            if (e.KeyCode == Keys.Down) { player2DetectetDown = false; }
         }
 
         private void Pong_KeyDown(object sender, KeyEventArgs e)
         {
             //If player1 presses the up arrow, move paddle upwards
-            if(e.KeyCode == Keys.Up) { playerDetectetUp = true; }
+            if(e.KeyCode == Keys.W) { playerDetectetUp = true; }
 
             //If player1 presses the down arrow, move paddle upwards
-            if (e.KeyCode == Keys.Down) { playerDetectetDown = true; }
+            if (e.KeyCode == Keys.S) { playerDetectetDown = true; }
 
             //If player2 presses the up arrow, move paddle upwards
-            if (e.KeyCode == Keys.W) { player2DetectetUp = true; }
+            if (e.KeyCode == Keys.Up) { player2DetectetUp = true; }
 
             //If player2 presses the down arrow, move paddle upwards
-            if (e.KeyCode == Keys.S) { player2DetectetDown = true; }
+            if (e.KeyCode == Keys.Down) { player2DetectetDown = true; }
 
 
             //Set Game-Break
@@ -225,6 +280,12 @@ namespace Pong
                 }
             }
             escapeClicked++;
+        }
+
+        private void Pong_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            startscreen startscreens = (startscreen)Application.OpenForms["startscreen"];
+            startscreens.Close();
         }
     }
 }

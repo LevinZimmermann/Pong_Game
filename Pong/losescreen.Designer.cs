@@ -37,7 +37,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.endPlayerScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -81,6 +81,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -91,6 +92,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Go to start";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -101,6 +103,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "Restart";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox1
             // 
@@ -131,15 +134,15 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "to write your score into a WORLDWIDE database";
             // 
-            // label5
+            // endPlayerScore
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(623, 209);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 23);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "_ _ _ _ ";
+            this.endPlayerScore.AutoSize = true;
+            this.endPlayerScore.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endPlayerScore.Location = new System.Drawing.Point(623, 209);
+            this.endPlayerScore.Name = "endPlayerScore";
+            this.endPlayerScore.Size = new System.Drawing.Size(106, 23);
+            this.endPlayerScore.TabIndex = 9;
+            this.endPlayerScore.Text = "_ _ _ _ ";
             // 
             // losescreen
             // 
@@ -147,7 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1154, 726);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.endPlayerScore);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
@@ -162,6 +165,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "losescreen";
             this.Text = "losescreen";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.losescreen_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,6 +182,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label endPlayerScore;
     }
 }
