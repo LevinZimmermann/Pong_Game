@@ -33,6 +33,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.InfoBTN = new System.Windows.Forms.Button();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // start
@@ -41,9 +42,10 @@
             this.start.Cursor = System.Windows.Forms.Cursors.Cross;
             this.start.Font = new System.Drawing.Font("Showcard Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.start.Location = new System.Drawing.Point(72, 99);
+            this.start.Location = new System.Drawing.Point(33, 137);
+            this.start.Margin = new System.Windows.Forms.Padding(6);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(210, 89);
+            this.start.Size = new System.Drawing.Size(287, 101);
             this.start.TabIndex = 0;
             this.start.Text = "Start Game";
             this.start.UseVisualStyleBackColor = false;
@@ -52,10 +54,11 @@
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.webBrowser1.Location = new System.Drawing.Point(798, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Location = new System.Drawing.Point(630, 0);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(6);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(37, 37);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(356, 726);
+            this.webBrowser1.Size = new System.Drawing.Size(653, 974);
             this.webBrowser1.TabIndex = 3;
             // 
             // textBox1
@@ -63,10 +66,11 @@
             this.textBox1.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(72, 258);
+            this.textBox1.Location = new System.Drawing.Point(33, 339);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(506, 312);
+            this.textBox1.Size = new System.Drawing.Size(372, 576);
             this.textBox1.TabIndex = 4;
             // 
             // InfoBTN
@@ -75,28 +79,38 @@
             this.InfoBTN.Cursor = System.Windows.Forms.Cursors.Cross;
             this.InfoBTN.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfoBTN.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.InfoBTN.Location = new System.Drawing.Point(72, 207);
+            this.InfoBTN.Location = new System.Drawing.Point(33, 266);
+            this.InfoBTN.Margin = new System.Windows.Forms.Padding(6);
             this.InfoBTN.Name = "InfoBTN";
-            this.InfoBTN.Size = new System.Drawing.Size(181, 45);
+            this.InfoBTN.Size = new System.Drawing.Size(197, 47);
             this.InfoBTN.TabIndex = 5;
             this.InfoBTN.Text = "Infos";
             this.InfoBTN.UseVisualStyleBackColor = false;
             this.InfoBTN.Click += new System.EventHandler(this.InfoBTN_Click);
             // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(1069, 970);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(250, 250);
+            this.webBrowser2.TabIndex = 6;
+            // 
             // startscreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1154, 726);
+            this.ClientSize = new System.Drawing.Size(1283, 974);
+            this.Controls.Add(this.webBrowser2);
             this.Controls.Add(this.InfoBTN);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.start);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "startscreen";
             this.Text = "startscreen";
-            this.Load += new System.EventHandler(this.startscreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +122,6 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button InfoBTN;
+        private System.Windows.Forms.WebBrowser webBrowser2;
     }
 }

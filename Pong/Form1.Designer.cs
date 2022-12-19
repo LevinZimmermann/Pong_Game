@@ -145,7 +145,6 @@
             this.Controls.Add(this.pongTimerLabel);
             this.Name = "Pong";
             this.Text = "Pong";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Pong_FormClosed);
             this.Load += new System.EventHandler(this.Pong_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pong_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Pong_KeyUp);

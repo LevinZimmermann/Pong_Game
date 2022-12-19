@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Pong
 {
@@ -16,6 +18,13 @@ namespace Pong
         {
             InitializeComponent();
             textBox1.Hide();
+            setDatapath(null, null);
+
+            losescreen losescreen = (losescreen)System.Windows.Forms.Application.OpenForms["losescreen"];
+            if (losescreen != null)
+            {
+                losescreen.Close();
+            }
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -25,9 +34,15 @@ namespace Pong
             this.Hide();
         }
 
-        private void startscreen_Load(object sender, EventArgs e)
+        //setPath and getWebsitePath
+        public void setDatapath(string name, string score)
         {
-            webBrowser1.Navigate("www.localhost/desktop-application/");
+
+            webBrowser1.Navigate("localhost/bounce_game/desktop-application/?newDataName&newDataScore");
+            if (name != null && score != null)
+            {
+                webBrowser1.Navigate("localhost/bounce_game/desktop-application/?newDataName=&newDataScore=" + name + "&newDataScore=" + score);
+            }
         }
 
 

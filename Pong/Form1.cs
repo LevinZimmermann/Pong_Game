@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace Pong
         int cpuDirection = 5;
         int ballXCoordinate = 10;
         int ballYCoordinate = 10;
+        int ballReturnAngel = 5;
 
         //Move Variable
         int toMovePlayer = 15;
@@ -49,6 +51,12 @@ namespace Pong
             int newSpot = newBallSpot.Next(1, 756);
 
             pongball.Location = new Point(xMidpoint, newSpot );
+
+            losescreen losescreen = (losescreen)Application.OpenForms["losescreen"];
+            if (losescreen != null)
+            {
+                losescreen.Close();
+            }
         }
 
 
@@ -92,6 +100,9 @@ namespace Pong
                 pongball.BackColor = Color.Red; 
                 Task.Delay(500).Wait();
                 pongball.BackColor = Color.Black;
+                Task.Delay(500).Wait();
+                SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\lose.wav");
+                simpleSound.Play();
                 losescreen l = new losescreen(playerScore);
                 l.Show();
             }
@@ -104,6 +115,8 @@ namespace Pong
                 pongball.BackColor = Color.Red;
                 Task.Delay(500).Wait();
                 pongball.BackColor = Color.Black;
+                SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\lose.wav");
+                simpleSound.Play();
                 losescreen l = new losescreen(playerScore);
                 l.Show();
             }
@@ -126,11 +139,16 @@ namespace Pong
                     ballXCoordinate = -ballXCoordinate;
                     if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
                     {
-                        ballYCoordinate = -3;
+                        ballYCoordinate = -ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob1.wav");
+                        simpleSound.Play();
+                    
                     }
                     else
                     {
-                        ballYCoordinate = +3;
+                        ballYCoordinate = +ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob1.wav");
+                        simpleSound.Play();
                     }
                     playerScore += 9;
                 }
@@ -140,11 +158,15 @@ namespace Pong
                     ballXCoordinate = -ballXCoordinate;
                     if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
                     {
-                        ballYCoordinate = -3;
+                        ballYCoordinate = -ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob1.wav");
+                        simpleSound.Play();
                     }
                     else
                     {
-                        ballYCoordinate = +3;
+                        ballYCoordinate = +ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob1.wav");
+                        simpleSound.Play();
                     }
                     playerScore += 9;
                 }
@@ -152,6 +174,8 @@ namespace Pong
                 {
                     //Send ball opposite direction
                     ballXCoordinate = -ballXCoordinate;
+                    SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob1.wav");
+                    simpleSound.Play();
 
                     //Give Points
                     playerScore += 7;
@@ -167,11 +191,15 @@ namespace Pong
                     ballXCoordinate = -ballXCoordinate;
                     if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
                     {
-                        ballYCoordinate = -3;
+                        ballYCoordinate = -ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob2.wav");
+                        simpleSound.Play();
                     }
                     else
                     {
-                        ballYCoordinate = +3;
+                        ballYCoordinate = +ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob2.wav");
+                        simpleSound.Play();
                     }
                     playerScore += 9;
                 }
@@ -181,11 +209,15 @@ namespace Pong
                     ballXCoordinate = -ballXCoordinate;
                     if (UInt32.TryParse(Convert.ToString(ballXCoordinate), out tryzahl) == true)
                     {
-                        ballYCoordinate = -3;
+                        ballYCoordinate = -ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob2.wav");
+                        simpleSound.Play();
                     }
                     else
                     {
-                        ballYCoordinate = +3;
+                        ballYCoordinate = +ballReturnAngel;
+                        SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob2.wav");
+                        simpleSound.Play();
                     }
                     playerScore += 9;
                 }
@@ -193,6 +225,8 @@ namespace Pong
                 {
                     //Send ball opposite direction
                     ballXCoordinate = -ballXCoordinate;
+                    SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\blob2.wav");
+                    simpleSound.Play();
 
                     //Give Points
                     playerScore += 7;
@@ -280,12 +314,6 @@ namespace Pong
                 }
             }
             escapeClicked++;
-        }
-
-        private void Pong_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            startscreen startscreens = (startscreen)Application.OpenForms["startscreen"];
-            startscreens.Close();
         }
     }
 }
