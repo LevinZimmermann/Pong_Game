@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,19 +25,16 @@ namespace Pong
             if(pong != null )
             { 
                 pong.Close();
-            }  
-        }
-
-        private void losescreen_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            startscreen startscreens = (startscreen)Application.OpenForms["startscreen"];
-            startscreens.Close();
+            }
+            SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\lose.wav");
+            simpleSound.Play();
         }
 
         private void restartBTN_Click_1(object sender, EventArgs e)
         {
             Pong p = new Pong();
             p.Show();
+            this.Close();
         }
 
         private void submitBTN_Click(object sender, EventArgs e)
@@ -48,6 +46,7 @@ namespace Pong
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
+            this.Close();
             startscreen startscreens = (startscreen)Application.OpenForms["startscreen"];
             startscreens.Show();
         }

@@ -165,7 +165,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "losescreen";
             this.Text = "losescreen";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.losescreen_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

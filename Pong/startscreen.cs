@@ -38,10 +38,10 @@ namespace Pong
         public void setDatapath(string name, string score)
         {
 
-            webBrowser1.Navigate("localhost/bounce_game/desktop-application/?newDataName&newDataScore");
+            webBrowser1.Navigate("localhost/bounce_game/desktop-application/");
             if (name != null && score != null)
             {
-                webBrowser1.Navigate("localhost/bounce_game/desktop-application/?newDataName=&newDataScore=" + name + "&newDataScore=" + score);
+                webBrowser1.Navigate("localhost/bounce_game/Controller/databaseInsert.php/?&newDataName=" + name + "&newDataScore=" + score);
             }
         }
 
