@@ -37,11 +37,10 @@ namespace Pong
         //setPath and getWebsitePath
         public void setDatapath(string name, string score)
         {
-
             webBrowser1.Navigate("localhost/bounce_game/desktop-application/");
             if (name != null && score != null)
             {
-                webBrowser1.Navigate("localhost/bounce_game/Controller/databaseInsert.php/?&newDataName=" + name + "&newDataScore=" + score);
+                webBrowser1.Navigate("localhost/bounce_game/admincontroll/databaseInsert.php/?&newDataName=" + name + "&newDataScore=" + score);
             }
         }
 
