@@ -26,7 +26,7 @@ namespace Pong
             { 
                 pong.Close();
             }
-            SoundPlayer simpleSound = new SoundPlayer(@"C:\xampp\htdocs\bounce_game\projekt_1_semester\sounds\lose.wav");
+            SoundPlayer simpleSound = new SoundPlayer(@"res\sounds\lose.wav");
             simpleSound.Play();
         }
 
@@ -42,6 +42,7 @@ namespace Pong
             startscreen startscreens = (startscreen)Application.OpenForms["startscreen"];
             startscreens.setDatapath(textBox1.Text, Convert.ToString(score));
             startscreens.Show();
+            startscreens.closeEndScreen();
         }
 
         private void StartBTN_Click(object sender, EventArgs e)

@@ -27,6 +27,15 @@ namespace Pong
             }
         }
 
+        public void closeEndScreen()
+        {
+            losescreen losescreen = (losescreen)System.Windows.Forms.Application.OpenForms["losescreen"];
+            if (losescreen != null)
+            {
+                losescreen.Close();
+            }
+        }
+
         private void start_Click(object sender, EventArgs e)
         {
             Pong p = new Pong();
@@ -37,10 +46,10 @@ namespace Pong
         //setPath and getWebsitePath
         public void setDatapath(string name, string score)
         {
-            webBrowser1.Navigate("localhost/bounce_game/desktop-application/");
+            webBrowser1.Navigate("chat.sigmale.dev/desktop-application/");
             if (name != null && score != null)
             {
-                webBrowser1.Navigate("localhost/bounce_game/admincontroll/databaseInsert.php/?&newDataName=" + name + "&newDataScore=" + score);
+                webBrowser1.Navigate("chat.sigmale.dev/admincontroll/databaseInsert.php/?&newDataName=" + name + "&newDataScore=" + score);
             }
         }
 
@@ -60,6 +69,11 @@ namespace Pong
                 textBox1.Hide() ;
                 tryzahl++;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

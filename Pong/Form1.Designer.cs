@@ -50,30 +50,27 @@
             // player1
             // 
             this.player1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.player1.Location = new System.Drawing.Point(18, 340);
-            this.player1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.player1.Location = new System.Drawing.Point(12, 221);
             this.player1.Name = "player1";
-            this.player1.Size = new System.Drawing.Size(33, 328);
+            this.player1.Size = new System.Drawing.Size(22, 213);
             this.player1.TabIndex = 0;
             this.player1.TabStop = false;
             // 
             // player2
             // 
             this.player2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.player2.Location = new System.Drawing.Point(1680, 340);
-            this.player2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.player2.Location = new System.Drawing.Point(1120, 221);
             this.player2.Name = "player2";
-            this.player2.Size = new System.Drawing.Size(33, 328);
+            this.player2.Size = new System.Drawing.Size(22, 213);
             this.player2.TabIndex = 1;
             this.player2.TabStop = false;
             // 
             // pongball
             // 
             this.pongball.BackColor = System.Drawing.Color.Black;
-            this.pongball.Location = new System.Drawing.Point(856, 491);
-            this.pongball.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pongball.Location = new System.Drawing.Point(571, 319);
             this.pongball.Name = "pongball";
-            this.pongball.Size = new System.Drawing.Size(30, 29);
+            this.pongball.Size = new System.Drawing.Size(20, 19);
             this.pongball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pongball.TabIndex = 2;
             this.pongball.TabStop = false;
@@ -82,10 +79,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(538, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(359, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(672, 169);
+            this.pictureBox1.Size = new System.Drawing.Size(448, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -96,10 +92,9 @@
             this.Score.BackColor = System.Drawing.Color.Transparent;
             this.Score.Font = new System.Drawing.Font("MS Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Score.ForeColor = System.Drawing.Color.Orange;
-            this.Score.Location = new System.Drawing.Point(776, 214);
-            this.Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Score.Location = new System.Drawing.Point(517, 139);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(178, 50);
+            this.Score.Size = new System.Drawing.Size(123, 34);
             this.Score.TabIndex = 4;
             this.Score.Text = "label1";
             // 
@@ -112,36 +107,34 @@
             // pongTimerLabel
             // 
             this.pongTimerLabel.AutoSize = true;
-            this.pongTimerLabel.Location = new System.Drawing.Point(780, 1083);
-            this.pongTimerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pongTimerLabel.Location = new System.Drawing.Point(520, 704);
             this.pongTimerLabel.Name = "pongTimerLabel";
-            this.pongTimerLabel.Size = new System.Drawing.Size(47, 20);
+            this.pongTimerLabel.Size = new System.Drawing.Size(33, 13);
             this.pongTimerLabel.TabIndex = 5;
             this.pongTimerLabel.Text = "Time:";
             // 
             // pongTimerMinute
             // 
             this.pongTimerMinute.AutoSize = true;
-            this.pongTimerMinute.Location = new System.Drawing.Point(855, 1083);
-            this.pongTimerMinute.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pongTimerMinute.Location = new System.Drawing.Point(570, 704);
             this.pongTimerMinute.Name = "pongTimerMinute";
-            this.pongTimerMinute.Size = new System.Drawing.Size(51, 20);
+            this.pongTimerMinute.Size = new System.Drawing.Size(35, 13);
             this.pongTimerMinute.TabIndex = 6;
             this.pongTimerMinute.Text = "label1";
             // 
             // pongTimerSecond
             // 
             this.pongTimerSecond.AutoSize = true;
-            this.pongTimerSecond.Location = new System.Drawing.Point(908, 1083);
-            this.pongTimerSecond.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pongTimerSecond.Location = new System.Drawing.Point(605, 704);
             this.pongTimerSecond.Name = "pongTimerSecond";
-            this.pongTimerSecond.Size = new System.Drawing.Size(0, 20);
+            this.pongTimerSecond.Size = new System.Drawing.Size(0, 13);
             this.pongTimerSecond.TabIndex = 7;
             // 
             // MX
             // 
             this.MX.Enabled = true;
             this.MX.Location = new System.Drawing.Point(766, 805);
+            this.MX.Margin = new System.Windows.Forms.Padding(2);
             this.MX.Name = "MX";
             this.MX.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MX.OcxState")));
             this.MX.Size = new System.Drawing.Size(309, 95);
@@ -149,11 +142,11 @@
             // 
             // Pong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1731, 1117);
+            this.ClientSize = new System.Drawing.Size(1154, 690);
             this.Controls.Add(this.MX);
             this.Controls.Add(this.pongTimerSecond);
             this.Controls.Add(this.pongTimerMinute);
@@ -163,9 +156,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.pongTimerLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Pong";
-            this.Text = "Pong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bounce - The home of Ping Pong";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Pong_FormClosed);
             this.Load += new System.EventHandler(this.Pong_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pong_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Pong_KeyUp);

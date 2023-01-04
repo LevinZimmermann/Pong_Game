@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(losescreen));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.endScorLabel = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.label1.Location = new System.Drawing.Point(179, 82);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1128, 114);
+            this.label1.Size = new System.Drawing.Size(752, 76);
             this.label1.TabIndex = 0;
             this.label1.Text = "You lose this Game";
             // 
@@ -59,7 +60,7 @@
             this.label2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(389, 209);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 34);
+            this.label2.Size = new System.Drawing.Size(190, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Your Score is: ";
             // 
@@ -69,7 +70,7 @@
             this.endScorLabel.Font = new System.Drawing.Font("Lucida Sans Typewriter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endScorLabel.Location = new System.Drawing.Point(507, 182);
             this.endScorLabel.Name = "endScorLabel";
-            this.endScorLabel.Size = new System.Drawing.Size(0, 40);
+            this.endScorLabel.Size = new System.Drawing.Size(0, 27);
             this.endScorLabel.TabIndex = 2;
             // 
             // submitBTN
@@ -109,7 +110,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(292, 369);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(573, 27);
+            this.textBox1.Size = new System.Drawing.Size(573, 20);
             this.textBox1.TabIndex = 6;
             // 
             // label3
@@ -119,7 +120,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(418, 300);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(466, 23);
+            this.label3.Size = new System.Drawing.Size(311, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Pleas enter your name and enter Submit";
             // 
@@ -130,7 +131,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(390, 328);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(550, 23);
+            this.label4.Size = new System.Drawing.Size(367, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "to write your score into a WORLDWIDE database";
             // 
@@ -140,13 +141,13 @@
             this.endPlayerScore.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endPlayerScore.Location = new System.Drawing.Point(623, 209);
             this.endPlayerScore.Name = "endPlayerScore";
-            this.endPlayerScore.Size = new System.Drawing.Size(159, 34);
+            this.endPlayerScore.Size = new System.Drawing.Size(106, 23);
             this.endPlayerScore.TabIndex = 9;
             this.endPlayerScore.Text = "_ _ _ _ ";
             // 
             // losescreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1154, 726);
@@ -162,9 +163,11 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Orange;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "losescreen";
-            this.Text = "losescreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bounce - The home of Ping Pong";
             this.ResumeLayout(false);
             this.PerformLayout();
 

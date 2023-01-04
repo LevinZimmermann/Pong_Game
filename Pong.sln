@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pong", "Pong\Pong.csproj", "{FAF0750B-5168-4485-96F4-91FD378866FE}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Pong SetUp V-1.1.15", "Pong SetUp V-1.1.15\Pong SetUp V-1.1.15.vdproj", "{2ACA31F9-A44B-4898-95EE-589566B7022A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{FAF0750B-5168-4485-96F4-91FD378866FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF0750B-5168-4485-96F4-91FD378866FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF0750B-5168-4485-96F4-91FD378866FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ACA31F9-A44B-4898-95EE-589566B7022A}.Debug|Any CPU.ActiveCfg = Debug
+		{2ACA31F9-A44B-4898-95EE-589566B7022A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
